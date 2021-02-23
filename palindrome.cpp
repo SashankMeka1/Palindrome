@@ -3,8 +3,8 @@
 using namespace std;
 bool issame(char input[], int length, int left_index, int right_index){
     if (left_index < length and left_index != right_index){
-        int front = isalnum(input[left_index])/8;//we dont actually remove the punctuation, we just skip the punctuation because it is not alphanumeric and check the next item in the cstring
-        int back = isalnum(input[right_index])/8;//check if alphanumeric and divide by eight to normalize
+        int front = (bool)isalnum(input[left_index]);//we dont actually remove the punctuation, we just skip the punctuation because it is not alphanumeric and check the next item in the cstring
+        int back = (bool) isalnum(input[right_index]);//check if alphanumeric and divide by eight to normalize
 	if(front + back == 2 and tolower(input[left_index]) != tolower(input[right_index])){
 		return false;//if unequal return false
         }
